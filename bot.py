@@ -6,7 +6,7 @@ from flask import Flask, request
 
 # Reemplaza 'YOUR_TELEGRAM_BOT_TOKEN' con el token de tu bot de Telegram
 app = Flask(__name__)
-TOKEN = os.environ.get('TOKEN')
+TOKEN = os.getenv('TOKEN')
 bot = telebot.TeleBot("TOKEN")
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
@@ -97,4 +97,4 @@ def handle_endpoint_selection(message):
         bot.reply_to(message, "Operación cancelada. Envíame una nueva URL para comenzar.")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+    app.run(host="0.0.0.0", port=int(os.getenv('PORT', 5000)))
