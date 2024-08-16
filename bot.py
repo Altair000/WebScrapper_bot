@@ -6,7 +6,7 @@ from flask import Flask, request
 
 # Reemplaza 'YOUR_TELEGRAM_BOT_TOKEN' con el token de tu bot de Telegram
 app = Flask(__name__)
-TOKEN = os.getenv('TOKEN')
+TOKEN = os.getenv('API_TOKEN')
 bot = telebot.TeleBot("TOKEN")
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
