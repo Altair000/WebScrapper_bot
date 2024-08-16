@@ -16,7 +16,7 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://zeuschk-64ea0cb25362.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://webscrapperbot-7376c5dc3c12.herokuapp.com/' + TOKEN)
     return "¡Webhook configurado!", 200
 
 # Diccionario para almacenar datos temporales del usuario
